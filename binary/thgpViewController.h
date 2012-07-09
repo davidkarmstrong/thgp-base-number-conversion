@@ -21,4 +21,6 @@
 
 @property (nonatomic, retain) IBOutlet UITextField *baseText;
 -(IBAction)converter:(id)sender;
+-(IBAction)removeKeyboard;
+
 @end

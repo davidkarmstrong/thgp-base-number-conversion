@@ -15,7 +15,7 @@
 @implementation thgpViewController
 
 @synthesize inputText, outputText;
-
+@synthesize baseText;
 - (void)viewDidLoad
 {
     [super viewDidLoad];
@@ -45,10 +45,12 @@ Converter/ Does the conversion for all the bases.
     int remainder;
     int B[20];
     int base;
-    NSLog (@"Input Text = %@", inputText);
-    
-    NSLog(@"Input Number = %d", Q);
-    
+    base = [baseText.text intValue];
+
+    NSLog (@"Input Text = %@", inputText.text);
+    NSLog (@"base Text = %@", baseText.text);
+    NSLog (@"Base = %d", base);   
+    NSLog (@"Input Number = %d", Q);
     for (I = 0; I < 20; I = I + 1) {
         B[I] = 0;
     }
@@ -345,6 +347,12 @@ Converter/ Does the conversion for all the bases.
 
 
 }
+
+-(IBAction)removeKeyboard{
+    
+    [inputText resignFirstResponder];
+}
+
 
 
 @end

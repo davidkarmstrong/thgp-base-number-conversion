@@ -19,7 +19,10 @@
                                 <rect key="frame" x="9" y="105" width="105" height="31"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits" keyboardType="numberPad"/>
+                                <textInputTraits key="textInputTraits" keyboardType="numbersAndPunctuation"/>
+                                <connections>
+                                    <action selector="removeKeyboard" destination="2" eventType="editingDidEndOnExit" id="I2g-fO-DLJ"/>
+                                </connections>
                             </textField>
                             <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Binary Converter" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="10" id="CtJ-7H-VBM">
                                 <rect key="frame" x="97" y="8" width="128" height="21"/>
@@ -29,19 +32,25 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" borderStyle="roundedRect" minimumFontSize="17" id="P4n-Rd-Pgd" userLabel="Text - Output">
-                                <rect key="frame" x="29" y="255" width="262" height="31"/>
+                                <rect key="frame" x="30" y="209" width="262" height="31"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
+                                <connections>
+                                    <action selector="removeKeyboard" destination="2" eventType="editingDidEndOnExit" id="NdX-sD-80w"/>
+                                </connections>
                             </textField>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" minimumFontSize="17" id="SlT-R6-BKC" userLabel="Base">
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Base #" minimumFontSize="17" id="SlT-R6-BKC" userLabel="Base">
                                 <rect key="frame" x="194" y="105" width="97" height="31"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits"/>
+                                <textInputTraits key="textInputTraits" keyboardType="numbersAndPunctuation"/>
+                                <connections>
+                                    <action selector="removeKeyboard" destination="2" eventType="editingDidEndOnExit" id="3du-Xv-0g0"/>
+                                </connections>
                             </textField>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="3Qr-re-GBJ">
-                                <rect key="frame" x="92" y="183" width="121" height="37"/>
+                                <rect key="frame" x="92" y="152" width="121" height="37"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
                                 <state key="normal" title="Convert">
@@ -51,6 +60,9 @@
                                 <state key="highlighted">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
+                                <connections>
+                                    <action selector="converter:" destination="2" eventType="touchUpInside" id="oPF-Bx-0iW"/>
+                                </connections>
                             </button>
                             <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Mod" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="10" id="7le-kR-hsz">
                                 <rect key="frame" x="131" y="110" width="42" height="21"/>
@@ -63,25 +75,22 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                     </view>
                     <connections>
+                        <outlet property="baseText" destination="SlT-R6-BKC" id="gvV-Nv-Upa"/>
                         <outlet property="inputText" destination="6gN-PS-ZX7" id="FQX-mo-kfW"/>
-                        <outlet property="outputText" destination="P4n-Rd-Pgd" id="AVp-5h-eDV"/>
+                        <outlet property="outputText" destination="P4n-Rd-Pgd" id="awk-dD-kEp"/>
                     </connections>
                 </viewController>
             </objects>
+            <point key="canvasLocation" x="98" y="-43"/>
         </scene>
     </scenes>
     <classes>
         <class className="thgpViewController" superclassName="UIViewController">
             <source key="sourceIdentifier" type="project" relativePath="./Classes/thgpViewController.h"/>
             <relationships>
-                <relationship kind="action" name="base2:"/>
-                <relationship kind="action" name="base3:"/>
-                <relationship kind="action" name="base4:"/>
-                <relationship kind="action" name="base5:"/>
-                <relationship kind="action" name="base6:"/>
-                <relationship kind="action" name="base7:"/>
-                <relationship kind="action" name="base8:"/>
-                <relationship kind="action" name="base9:"/>
+                <relationship kind="action" name="converter:"/>
+                <relationship kind="action" name="removeKeyboard"/>
+                <relationship kind="outlet" name="baseText" candidateClass="UITextField"/>
                 <relationship kind="outlet" name="inputText" candidateClass="UITextField"/>
                 <relationship kind="outlet" name="outputText" candidateClass="UITextField"/>
             </relationships>
